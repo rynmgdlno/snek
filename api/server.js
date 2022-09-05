@@ -19,7 +19,7 @@ const db = knex({
 const app = express()
 
 const corsOptions = {
-  origin: ['http://snekgame.com', 'http://api.snekgame.com']
+  origin: ['http://snekgame.com', 'http://api.snekgame.com', 'http://localhost:3000']
 }
 
 app.use(cors(corsOptions))
@@ -32,9 +32,8 @@ app.post('/submit-score', (req, res) => {
     .insert({
       name: player_name,
       score: score,
-      gamemode: game_mode,
-      difficulty: difficulty,
-      created: new Date()
+      game_mode: game_mode,
+      difficulty: difficulty
     })
     .then(entry => {
       res.send('submit success')
@@ -44,20 +43,18 @@ app.post('/submit-score', (req, res) => {
 
 app.get('/recent', (req, res) => {
   db('scores')
-  .orderBy('created', 'desc')
+  .orderBy('created_at', 'desc')
   .limit(50)
   .then(data => {
     res.json(data)
-    // console.log(data)
   })
 })
 
 
 app.get('/top-scores', (req, res) => {
   const { gameMode } = req.query
-  console.log(req)
   db('scores')
-  .where('gamemode', gameMode)
+  .where('game_mode', gameMode)
   .orderBy('score', 'desc')
   .limit(15)
   .then(data => {
@@ -68,7 +65,7 @@ app.get('/top-scores', (req, res) => {
 app.get('/leader-board', (req, res) => {
   const { gameMode, difficulty } = req.query
   db('scores')
-  .where('gamemode', gameMode)
+  .where('game_mode', gameMode)
   .andWhere('difficulty', difficulty)
   .orderBy('score', 'desc')
   .limit(15)

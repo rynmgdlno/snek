@@ -12,6 +12,7 @@ import './App.scss';
 // import Snake from './components/snake/snake'
 
 // import SnakeIcon from './assets/icons/snake-icon'
+require('dotenv').config({path: '../.env'})
 
 const App = () => {
   let vh = window.innerHeight * .01

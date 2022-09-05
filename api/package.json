@@ -1,6 +1,5 @@
 {
-  "name": "snekBE",
-  "type": "module",
+  "name": "snek_api",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -23,6 +22,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
     "express": "^4.17.1",
     "knex": "^0.95.1",
     "pg": "^8.5.1"

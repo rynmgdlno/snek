@@ -26,11 +26,12 @@ const Home = () => {
   useEffect(() => {
     const getScores = async () => {
       let scores = await getRecentScores()
+      // console.log(scores)
       setScores(scores)
     }
-
     getScores()
   }, [])
+
 
   return (
     <div className='home'>
@@ -79,7 +80,7 @@ const Home = () => {
           {
             recentScores && recentScores.map((score, index) => (
               <div key={index} className='score'>
-                <span>{score.name}<span className='score-mode'>{` (${score.gamemode})`}</span></span>
+                <span>{score.name}<span className='score-mode'>{` (${score.game_mode})`}</span></span>
                 <span>{score.score}</span>
               </div>
             ))

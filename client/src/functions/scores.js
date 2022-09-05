@@ -1,4 +1,5 @@
 // Functions for submitting and retrieving scores from API/Postgres
+const baseURL = process.env.REACT_APP_BASE_URL 
 
 export const submitScore = async (user, score, gameMode, difficulty) => {
   const settings = {
@@ -16,7 +17,7 @@ export const submitScore = async (user, score, gameMode, difficulty) => {
     })
   }
   try {
-    const response = await fetch('https://api.snekgame.com/submit-score', settings)
+    const response = await fetch(`${baseURL}/submit-score`, settings)
     return response
   } catch (e) {
     return e
@@ -26,7 +27,8 @@ export const submitScore = async (user, score, gameMode, difficulty) => {
 
 export const getRecentScores = async () => {
   try {
-    const response = await fetch('https://api.snekgame.com/recent')
+    const response = await fetch(`${baseURL}/recent`)
+    console.log(baseURL)
     const data = await response.json()
     return data
   } catch (e) {
@@ -36,7 +38,7 @@ export const getRecentScores = async () => {
 
 export const getHighScores = async (gameMode, difficulty) => {
   try {
-    const response = await fetch(`https://api.snekgame.com/leader-board?gameMode=${gameMode}&difficulty=${difficulty}`)
+    const response = await fetch(`${baseURL}/leader-board?gameMode=${gameMode}&difficulty=${difficulty}`)
     const data = await response.json()
     return data
   } catch (e) {
