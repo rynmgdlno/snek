@@ -27,6 +27,7 @@ app.use(urlencoded({ extended: false }))
 app.use(json())
 
 app.post('/submit-score', (req, res) => {
+  console.log(req.body)
   const { player_name, score, game_mode, difficulty } = req.body
   db('scores')
     .insert({
