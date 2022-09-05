@@ -38,8 +38,12 @@ app.post('/submit-score', (req, res) => {
     })
     .then(entry => {
       res.send('submit success')
+      console.log(entry)
     })
-    .catch(err => res.status(400).json('There was a problem submitting your score. Please try again later.'))
+    .catch(err => {
+      console.log(err)
+      res.status(400).json('There was a problem submitting your score. Please try again later.')
+    })
 })
 
 app.get('/recent', (req, res) => {
