@@ -1,0 +1,58 @@
+@use '../../variables.scss';
+
+.mode-card {
+  display: flex;
+  flex-direction: column;
+  color: variables.$mainText;
+
+  .card-title {
+    color: variables.$mainFore;
+    margin-bottom: .5rem;
+  }
+
+  .card-text {
+    margin-top: .5rem;
+  }
+
+  .play {
+    margin-top: 1rem;
+    border: 1px solid variables.$mainFore;
+    border-radius: 5px;
+    color: variables.$mainFore;
+    text-decoration: none;
+    text-align: center;
+
+    .play-text {
+      margin: 5px;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .mode-card {
+    flex-direction: row;
+
+    .video-container {
+      width: 40%;
+
+      .video {
+        width: 500px;
+      }
+    }
+
+    .sub-container {
+      display: flex;
+      flex-direction: column;
+      margin: 1rem;
+      width: 60%;
+
+      .play {
+        width: 20%;
+
+        .play-text {
+          // background-color: red;
+        }
+      }
+    }
+  }
+}

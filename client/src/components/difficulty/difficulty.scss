@@ -1,0 +1,34 @@
+.diff-container {
+
+  .diff-button{
+    .speed-button {
+      width: 32px;
+    }
+  }
+  .diff-drop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
+    position: absolute;
+    top: 5px;
+    left: 0;
+    z-index: 9999;
+    background-color: rgba(0,0,0,.7);
+
+    .selection-window {
+      width: 4rem;
+      text-align: center;
+
+      .option {
+        font-size: 2rem;
+        cursor: pointer;
+      }
+
+      .option:hover {
+        opacity: .7;
+      }
+    }
+  }
+}

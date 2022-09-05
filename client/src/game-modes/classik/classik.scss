@@ -1,0 +1,241 @@
+@use '../../variables.scss';
+
+.page-container-classik {
+  height: calc(var(--vh, 1vh) * 100);
+  overflow-x: hidden;
+  background-color: variables.$classikBG;
+  color: variables.$classikFore;
+
+  .border-classik {
+    height: 2px;
+    width: 100%;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, variables.$classikBG 0%, variables.$classikFore 50%, variables.$classikBG 100%);
+  }
+
+  .mode-title-classik {
+    font-family: NokiaNokia, serif;
+    font-style: normal;
+    font-size: 30px;
+    transform: skew(0);
+    margin-bottom: 10px;
+    color: variables.$classikFore;
+    text-align: center;
+  }
+
+  .game-container-classik {
+    height: 82%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: visible;
+
+    .game-info {
+      width: 100%;
+      padding: 0 variables.$window-margin-mobile;
+
+      .mode-bar-classik {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .controls-classik {
+          display: flex;
+          align-items: center;
+
+          .toggle-button {
+            cursor: pointer;
+            width: 32px;
+          }
+        }
+      }
+
+      .stats-classik {
+        display: flex;
+        justify-content: space-between;
+
+        .stats-text-classik {
+          margin-bottom: 10px;
+          color: variables.$mainText;
+        }
+
+        .score-classik {
+          margin-bottom: 10px;
+          color: variables.$mainText;
+
+          .points-classik {
+            color: variables.$mainFore;
+          }
+        }
+      }
+    }
+
+    .button-container-horizontal-classik {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .button-container-horizontal-classik:active {
+      background-color: variables.$mainDarkText;
+      opacity: .2;
+    }
+
+    .secondary-container-classik {
+      display: flex;
+      align-items: center;
+
+      .button-container-vertical-classik {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 78vw;
+      }
+
+      .button-container-vertical-classik:active {
+        background-color: variables.$mainDarkText;
+        opacity: .2;
+      }
+
+      .board-classik {
+        display: flex;
+        flex-flow: row wrap;
+        width: 78vw;
+        height: 78vw;
+        border: 2px dashed variables.$classikFore;
+
+        .space-classik {
+          height: 5%;
+          width: 5%;
+        }
+
+        .food-classik {
+          background-color: variables.$classikFore;
+          border-radius: 100%;
+          z-index: 999;
+        }
+
+        .snake-classik {
+          background-color: variables.$classikFore;
+        }
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes super-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-720deg);
+  }
+}
+
+@keyframes mega-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .page-container-classik {
+    padding: 0 variables.$window-margin;
+
+    .mode-title-classik {
+      margin-right: auto;
+    }
+
+    .game-container-classik {
+      height: auto;
+      flex-direction: row;
+      align-items: start;
+      align-content: left;
+      overflow: visible;
+
+      .game-info-classik {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        align-content: left;
+
+        .mode-bar-classik {
+          flex-direction: column;
+          align-items: stretch;
+
+          .controls-classik {
+            align-items: left;
+            margin-right: auto;
+          }
+        }
+
+        .stats-classik {
+          flex-direction: column;
+        }
+      }
+
+      .board-container-classik {
+        display: flex;
+        flex-direction: column;
+        margin-left: 3vw;
+
+        .secondary-container-classik {
+          display: flex;
+          align-items: center;
+
+          .button-container-vertical-classik {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 40vw;
+          }
+
+          .button-container-vertical-classik:active {
+            background-color: variables.$mainDarkText;
+            opacity: .2;
+          }
+
+          .board-classik {
+            display: flex;
+            flex-flow: row wrap;
+            width: 40vw;
+            height: 40vw;
+            // margin-left: 3.5vw;
+
+            .space-classik {
+              height: 5%;
+              width: 5%;
+              background-color: variables.$classikBG;
+            }
+
+            .food-classik {
+              background-color: variables.$classikFore;
+              border-radius: 100%;
+              z-index: 999;
+            }
+
+            .snake-classik {
+              background-color: variables.$classikFore;
+            }
+          }
+        }
+      }
+    }
+  }
+}

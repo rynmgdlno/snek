@@ -1,0 +1,326 @@
+@use '../../variables.scss';
+
+.page-container-ception {
+  height: calc(var(--vh, 1vh) * 100);
+  overflow-x: hidden;
+  background-color: variables.$ceptionBG;
+
+  .border-ception {
+    height: 2px;
+    width: 100%;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, variables.$ceptionBG 0%, variables.$ceptionFore 50%, variables.$ceptionBG 100%);
+  }
+
+  .mode-title-ception {
+    margin-left: variables.$window-margin-mobile;
+    color: variables.$ceptionFore;
+    font-family: Inception, serif;
+    font-size: 28px;
+    transform: skew(0);
+    font-style: normal;
+    text-align: center;
+  }
+
+  .game-container-ception {
+    height: 82%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: visible;
+
+    .game-info-ception {
+      width: 100%;
+      padding: 0 variables.$window-margin-mobile;
+
+      .mode-bar-ception {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .controls-ception {
+          display: flex;
+          align-items: center;
+
+          .toggle-button {
+            cursor: pointer;
+            width: 32px;
+          }
+        }
+      }
+
+      .stats-ception {
+        display: flex;
+        justify-content: space-between;
+
+        .stats-text-ception {
+          margin-bottom: 10px;
+          color: variables.$ceptionFore;
+        }
+
+        .score-ception {
+          margin-bottom: 10px;
+          color: variables.$ceptionFore;
+
+          .points-ception {
+            color: variables.$ceptionFore;
+          }
+        }
+      }
+    }
+
+    .button-container-horizontal-ception {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .button-container-horizontal-ception:active {
+      background-color: variables.$ceptionFore;
+      opacity: .2;
+    }
+
+    .secondary-container-ception {
+      display: flex;
+      align-items: center;
+
+      .button-container-vertical-ception {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 78vw;
+      }
+
+      .button-container-vertical-ception:active {
+        background-color: variables.$ceptionFore;
+        opacity: .2;
+      }
+
+      .board-ception {
+        display: flex;
+        flex-flow: row wrap;
+        width: 78vw;
+        height: 78vw;
+
+        .space-ception {
+          height: 5%;
+          width: 5%;
+          background-color: variables.$ceptionSpace;
+          border-radius: 30%;
+          border: 1px solid variables.$ceptionBG;
+          transition: all .2s ease-in-out;
+
+          &:hover {
+            transition: all .05s ease-in-out;
+            background-color: variables.$ceptionBG;
+            transform: scale(.2);
+            box-shadow: 0 0 100px 30px rgb(27, 84, 131);
+          }
+        }
+
+        .food-ception {
+          background: radial-gradient(rgb(89, 98, 126), rgb(31, 104, 59));
+          animation: spin 1s infinite;
+          outline: 2px solid variables.$ceptionBG;
+          outline-offset: 7px;
+          border-radius: 100%;
+          box-shadow: 0 0 100px 30px variables.$mainBorder;
+          transform: rotate(45deg);
+          z-index: 999;
+        }
+
+        .super-food-ception {
+          background: radial-gradient(variables.$ceptionFore, variables.$ceptionText);
+          animation: super-spin 3s infinite;
+          outline: 2px solid variables.$ceptionText;
+          outline-offset: 10px;
+          border-radius: 50%;
+          box-shadow: 0 0 80px 20px variables.$mainFore,
+            0px 60px 100px 7px yellow,
+            0px -60px 100px 7px yellow;
+          transform: rotate(45deg);
+          z-index: 999;
+        }
+
+        .mega-food-ception {
+          background-color: black;
+          animation: mega-spin .5s infinite;
+          outline: 2px solid rgb(119, 128, 0);
+          outline-offset: 15px;
+          border: 1px solid variables.$mainFore;
+          border-radius: 100%;
+          transform: rotate(45deg);
+          box-shadow: 0 0 10px 10px variables.$mainText,
+            0px 120px 100px 15px variables.$mainFore,
+            0px -120px 200px 15px variables.$mainFore,
+            120px 0px 200px 15px yellow,
+            -120px 0px 200px 15px yellow;
+        }
+
+        .snake-ception {
+          background-color: variables.$ceptionFore;
+        }
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes super-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-720deg);
+  }
+}
+
+@keyframes mega-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .page-container-ception {
+    padding: 0 variables.$window-margin;
+
+    .mode-title-ception {
+      font-size: 43px;
+      margin-right: auto;
+    }
+
+    .game-container-ception {
+      height: auto;
+      flex-direction: row;
+      align-items: start;
+      align-content: left;
+      overflow: visible;
+
+      .game-info-ception {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        align-content: left;
+
+        .mode-bar-ception {
+          flex-direction: column;
+          align-items: stretch;
+
+          .controls-ception {
+            align-items: left;
+            margin-right: auto;
+          }
+        }
+
+        .stats-ception {
+          flex-direction: column;
+        }
+      }
+
+      .board-container-ception {
+        display: flex;
+        flex-direction: column;
+        margin-left: 3vw;
+
+        .secondary-container-ception {
+          display: flex;
+          align-items: center;
+
+          .button-container-vertical-ception {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 40vw;
+          }
+
+          .button-container-vertical-ception:active {
+            background-color: variables.$ceptionFore;
+            opacity: .2;
+          }
+
+          .board-ception {
+            display: flex;
+            flex-flow: row wrap;
+            width: 40vw;
+            height: 40vw;
+
+            .space-ception {
+              height: 5%;
+              width: 5%;
+              background-color: variables.$ceptionSpace;
+              border-radius: 30%;
+              border: 1px solid variables.$ceptionBG;
+              transition: all .2s ease-in-out;
+
+              &:hover {
+                transition: all .05s ease-in-out;
+                background-color: variables.$ceptionBG;
+                transform: scale(.2);
+                box-shadow: 0 0 100px 30px rgb(27, 84, 131);
+              }
+            }
+
+            .food-ception {
+              background: radial-gradient(rgb(89, 98, 126), rgb(31, 104, 59));
+              animation: spin 1s infinite;
+              outline: 2px solid variables.$ceptionBG;
+              outline-offset: 7px;
+              border-radius: 100%;
+              box-shadow: 0 0 100px 30px variables.$mainBorder;
+              transform: rotate(45deg);
+              z-index: 999;
+            }
+
+            .super-food-ception {
+              background: radial-gradient(variables.$ceptionFore, variables.$ceptionText);
+              animation: super-spin 3s infinite;
+              outline: 2px solid variables.$ceptionText;
+              outline-offset: 10px;
+              border-radius: 50%;
+              box-shadow: 0 0 80px 20px variables.$mainFore,
+                0px 60px 100px 7px yellow,
+                0px -60px 100px 7px yellow;
+              transform: rotate(45deg);
+              z-index: 999;
+            }
+
+            .mega-food-ception {
+              background-color: black;
+              animation: mega-spin .5s infinite;
+              outline: 2px solid variables.$ceptionFore;
+              outline-offset: 15px;
+              border: 1px solid variables.$ceptionText;
+              border-radius: 100%;
+              transform: rotate(45deg);
+              box-shadow: 0 0 10px 10px variables.$mainText,
+                0px 120px 100px 15px variables.$mainFore,
+                0px -120px 200px 15px variables.$mainFore,
+                120px 0px 200px 15px yellow,
+                -120px 0px 200px 15px yellow;
+            }
+
+            .snake-ception {
+              background-color: variables.$ceptionFore;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.high-scores {
+  // margin-top: 3rem;
+  width: auto;
+
+  .individual-high-score {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .high-scores {
+    width: 15vw;
+  }
+}

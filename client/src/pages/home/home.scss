@@ -1,0 +1,147 @@
+@use '../../variables.scss';
+
+.home {
+  background-color: variables.$mainBG;
+  margin: 0 variables.$window-margin-mobile;
+
+
+  .home-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+
+    .home-header-title {
+      font-size: 45px;
+    }
+
+    .home-header-logo {
+      width: 200px;
+    }
+  }
+
+  .home-container {
+    .home-main {
+      .home-intro {
+        color: variables.$mainText;
+        margin-top: 1rem;
+
+        .intro-title {
+          color: variables.$mainFore;
+        }
+      }
+
+      .intro-border {
+        height: 2px;
+        width: 100%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        background: linear-gradient(90deg, variables.$mainBG 0%, variables.$mainBorder 50%, variables.$mainBG 100%);
+      }
+
+      .mode-window {
+        // margin-top: 3rem;
+
+        .section-title {
+          margin-top: 0;
+          color: variables.$mainFore;
+        }
+      }
+    }
+
+    .home-scores {
+      color: variables.$mainSnake;
+      // width: 30vw;
+      // margin: 1rem;
+
+      .leader-link {
+        text-align: center;
+        margin: 2rem 0;
+      }
+
+      .score {
+        display: flex;
+        justify-content: space-between;
+
+        .score-mode {
+          color: variables.$mainDarkText;
+        }
+      }
+
+      .scores-title {
+        color: variables.$mainSnake;
+      }
+
+      .score-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px dashed variables.$mainSnake;
+
+        .scores-col {
+          color: variables.$mainSnake;
+        }
+      }
+    }
+  }
+
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .footer-text {
+      color: variables.$mainDarkText;
+    }
+
+    .social-links {
+      display: flex;
+    }
+
+    .git-hub-icon {
+      width: 30px;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .home {
+    margin: 0 variables.$window-margin;
+
+    .home-container {
+      display: flex;
+
+      .home-main {
+        width: 80vw;
+      }
+
+      .home-scores {
+        width: 30vw;
+        margin: 1rem;
+
+        .score {
+          display: flex;
+          justify-content: space-between;
+
+          .score-mode {
+            color: variables.$mainDarkText;
+          }
+        }
+
+        .scores-title {
+          color: variables.$mainSnake;
+        }
+
+        .score-header {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px dashed variables.$mainSnake;
+
+          .scores-col {
+            color: variables.$mainSnake;
+          }
+        }
+      }
+    }
+  }
+}

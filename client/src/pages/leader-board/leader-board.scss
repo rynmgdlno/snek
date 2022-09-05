@@ -1,0 +1,93 @@
+@use '../../variables.scss';
+
+.leader-board {
+  h2 {
+    color: variables.$mainFore;
+    margin-bottom: 2rem;
+  }
+
+  padding: 0 variables.$window-margin-mobile;
+
+  .border {
+    height: 2px;
+    width: 100%;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, variables.$mainBG 0%, variables.$mainBorder 50%, variables.$mainBG 100%);
+  }
+
+
+  .game-high-score-container {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    padding: 10px;
+
+    .score-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+}
+
+.snek-leader-board {
+  color: variables.$mainFore;
+  border: 1px solid variables.$mainFore;
+}
+
+.ouroboros-leader-board {
+  color: variables.$mainSnake;
+  border: 1px solid variables.$mainSnake;
+}
+
+.snekception-leader-board {
+  background-color: variables.$ceptionBG;
+  color: variables.$ceptionFore;
+  border: 1px solid variables.$ceptionFore;
+}
+
+.classik-leader-board {
+  background-color: variables.$classikBG;
+  color: variables.$classikFore;
+  border: 1px solid variables.$classikBG;
+}
+
+.ception-title {
+  font-family: inception;
+  transform: skew(0deg);
+  font-style: normal;
+  font-size: 1.4rem;
+  // text-align: center;
+}
+
+.classik-title {
+  font-family: NokiaNokia;
+  transform: skew(0deg);
+  font-style: normal;
+  font-size: 1.4rem;
+  // text-align: center;
+}
+
+@media screen and (min-width: 769px) {
+  .leader-board {
+    padding: 0 variables.$window-margin;
+
+    .game-high-score-container {
+      
+      .score-container {
+        flex-direction: row;
+
+        .difficulty-container {
+          border: none;
+        }
+      }
+
+    }
+  }
+
+  .ception-title, .classik-title {
+    font-size: 2rem;
+  }
+}

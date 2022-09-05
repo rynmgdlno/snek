@@ -1,0 +1,37 @@
+@use './variables.scss';
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-style: italic;
+  background-color: variables.$mainBG;
+  overflow-x: hidden;
+  // height: 100vh;
+  // margin: 0 variables.$window-margin-mobile;
+}
+
+h1 {
+  font-size: 40px;
+  transform: skew(-20deg);
+}
+
+h2 {
+  transform: skew(-20deg);
+}
+
+h3 {
+  transform: skew(-20deg);
+}
+
+h4 {
+  transform: skew(-20deg);
+}
+
+a {
+  text-decoration: none;
+}

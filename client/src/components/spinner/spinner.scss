@@ -1,0 +1,100 @@
+@use '../../variables.scss';
+
+.spinner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  width: 100px;
+  height: 100px;
+  grid-template-areas:
+    "section-1 section-2 section-3 section-4"
+    "section-12 blank blank section-5"
+    "section-11 blank blank section-6"
+    "section-10 section-9 section-8 section-7";
+}
+
+.section-1 {
+  grid-area: section-1;
+  animation: snake-animate 1.1s 1.2s infinite;
+}
+
+.section-2 {
+  grid-area: section-2;
+  animation: snake-animate 1.1s .1s infinite;
+}
+
+.section-3 {
+  grid-area: section-3;
+  animation: snake-animate 1.1s .2s infinite;
+}
+
+.section-4 {
+  grid-area: section-4;
+  animation: snake-animate 1.1s .3s infinite;
+}
+
+.section-5 {
+  grid-area: section-5;
+  animation: snake-animate 1.1s .4s infinite;
+}
+
+.section-6 {
+  grid-area: section-6;
+  animation: snake-animate 1.1s .5s infinite;
+}
+
+.section-7 {
+  grid-area: section-7;
+  animation: snake-animate 1.1s .6s infinite;
+}
+
+.section-8 {
+  grid-area: section-8;
+  animation: snake-animate 1.1s .7s infinite;
+}
+
+.section-9 {
+  grid-area: section-9;
+  animation: snake-animate 1.1s .8s infinite;
+}
+
+.section-10 {
+  grid-area: section-10;
+  animation: snake-animate 1.1s .9s infinite;
+}
+
+.section-11 {
+  grid-area: section-11;
+  animation: snake-animate 1.1s 1s infinite;
+}
+
+.section-12 {
+  grid-area: section-12;
+  animation: snake-animate 1.1s 1.1s infinite;
+}
+
+.blank {
+  grid-area: blank;
+}
+
+.unit {
+  width: 20px;
+  height: 20px;
+  background-color: variables.$mainFore;
+  border-radius: 5px;
+}
+
+.blank {
+  width: 40px;
+  height: 40px;
+}
+
+@keyframes snake-animate {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}

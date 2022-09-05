@@ -1,0 +1,25 @@
+@use '../../variables.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 8%;
+  margin: 0 variables.$window-margin-mobile;
+
+  .header-title {
+    font-size: 35px;
+  }
+
+  .header-logo {
+    width: 40px;
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  @media (orientation: landscape) {
+    .header {
+      height: 6vh;
+    }
+  }
+}

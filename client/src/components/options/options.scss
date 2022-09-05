@@ -1,0 +1,16 @@
+@use '../../variables.scss';
+
+.difficulty {
+  display: flex;
+  flex-direction: column;
+  color: variables.$mainText;
+  font-size: 26px;
+
+  .radio-container {
+    display: flex;
+
+    .radio {
+      width: 16px;
+    }
+  }
+}
