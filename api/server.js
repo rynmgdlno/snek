@@ -19,7 +19,7 @@ const db = knex({
 const app = express()
 
 const corsOptions = {
-  origin: ['https://snekgame.com', 'https://api.snekgame.com', 'http://localhost:3000']
+  origin: ['https://snekgame.com', 'https://www.snekgame.com']
 }
 
 app.use(cors(corsOptions))
